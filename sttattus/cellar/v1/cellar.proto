@@ -1,0 +1,212 @@
+syntax = "proto3";
+
+package sttattus.cellar.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/cellar/v1;cellarv1";
+
+// CellarService powers Pillar 18: Cellar (Rare Vintages, Bonded Storage Telemetry & Epicurean Provenance).
+service CellarService {
+  rpc GetCellarStats(GetCellarStatsRequest) returns (GetCellarStatsResponse);
+  rpc ListCellarLots(ListCellarLotsRequest) returns (ListCellarLotsResponse);
+  rpc RegisterCellarLot(RegisterCellarLotRequest) returns (RegisterCellarLotResponse);
+  rpc ListTastingsAndAllocations(ListTastingsAndAllocationsRequest) returns (ListTastingsAndAllocationsResponse);
+  rpc ReserveTastingOrAllocation(ReserveTastingOrAllocationRequest) returns (ReserveTastingOrAllocationResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices CL1-CL12 Workbench & Mutation RPCs
+  rpc GetCellarChoiceWorkbench(GetCellarChoiceWorkbenchRequest) returns (GetCellarChoiceWorkbenchResponse);
+  rpc SaveCellarChoiceRecord(SaveCellarChoiceRecordRequest) returns (SaveCellarChoiceRecordResponse);
+  rpc AdjudicateCellarChoiceGovernance(AdjudicateCellarChoiceGovernanceRequest) returns (AdjudicateCellarChoiceGovernanceResponse);
+}
+
+message CellarStats {
+  string user_id = 1;
+  double cellar_score = 2;
+  string standing_tier = 3;
+  int32 total_bottles_count = 4;
+  int32 bonded_verified_lots = 5;
+  int32 active_allocations = 6;
+  double total_cellar_valuation_usd = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message CellarLot {
+  string id = 1;
+  string user_id = 2;
+  string producer_and_cuvee = 3;
+  string vintage_year = 4;
+  string region_appellation = 5;
+  string lwin_code = 6;
+  int32 bottle_count = 7;
+  string format_size = 8;
+  string storage_vault = 9;
+  bool in_bond = 10;
+  double market_valuation_usd = 11;
+  string drinking_window = 12;
+  string provenance_status = 13;
+  google.protobuf.Timestamp created_at = 14;
+}
+
+message TastingOrAllocation {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string domaine_or_host = 4;
+  string city_or_region = 5;
+  string category = 6;
+  double allocation_price_usd = 7;
+  bool direct_ex_chateau = 8;
+  bool reserved = 9;
+  google.protobuf.Timestamp event_at = 10;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool include_valuation_band = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetCellarStatsRequest {}
+
+message GetCellarStatsResponse {
+  CellarStats stats = 1;
+}
+
+message ListCellarLotsRequest {
+  int32 limit = 1;
+}
+
+message ListCellarLotsResponse {
+  repeated CellarLot lots = 1;
+}
+
+message RegisterCellarLotRequest {
+  string producer_and_cuvee = 1;
+  string vintage_year = 2;
+  string region_appellation = 3;
+  string lwin_code = 4;
+  int32 bottle_count = 5;
+  string format_size = 6;
+  string storage_vault = 7;
+  bool in_bond = 8;
+  double market_valuation_usd = 9;
+  string drinking_window = 10;
+}
+
+message RegisterCellarLotResponse {
+  CellarLot lot = 1;
+  double updated_cellar_score = 2;
+}
+
+message ListTastingsAndAllocationsRequest {
+  string category = 1;
+}
+
+message ListTastingsAndAllocationsResponse {
+  repeated TastingOrAllocation items = 1;
+}
+
+message ReserveTastingOrAllocationRequest {
+  string item_id = 1;
+  string dietary_or_cellar_note = 2;
+}
+
+message ReserveTastingOrAllocationResponse {
+  TastingOrAllocation item = 1;
+  double updated_cellar_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool include_valuation_band = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetCellarChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetCellarChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveCellarChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveCellarChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_cellar_score = 2;
+}
+
+message AdjudicateCellarChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateCellarChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}

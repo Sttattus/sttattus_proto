@@ -1,0 +1,206 @@
+syntax = "proto3";
+
+package sttattus.fractal.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/fractal/v1;fractalv1";
+
+// FractalService powers Pillar 20: Fractal (Quantitative Models, Generative Pipelines & Compute Sovereignty).
+service FractalService {
+  rpc GetFractalStats(GetFractalStatsRequest) returns (GetFractalStatsResponse);
+  rpc ListQuantModels(ListQuantModelsRequest) returns (ListQuantModelsResponse);
+  rpc RegisterQuantModel(RegisterQuantModelRequest) returns (RegisterQuantModelResponse);
+  rpc ListComputeClusters(ListComputeClustersRequest) returns (ListComputeClustersResponse);
+  rpc DispatchComputeJob(DispatchComputeJobRequest) returns (DispatchComputeJobResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices FR1-FR12 Workbench & Mutation RPCs
+  rpc GetFractalChoiceWorkbench(GetFractalChoiceWorkbenchRequest) returns (GetFractalChoiceWorkbenchResponse);
+  rpc SaveFractalChoiceRecord(SaveFractalChoiceRecordRequest) returns (SaveFractalChoiceRecordResponse);
+  rpc AdjudicateFractalChoiceGovernance(AdjudicateFractalChoiceGovernanceRequest) returns (AdjudicateFractalChoiceGovernanceResponse);
+}
+
+message FractalStats {
+  string user_id = 1;
+  double fractal_score = 2;
+  string standing_tier = 3;
+  int32 registered_models_count = 4;
+  int32 verified_backtests_count = 5;
+  int32 attested_enclave_runs = 6;
+  double out_of_sample_sharpe = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message QuantModel {
+  string id = 1;
+  string user_id = 2;
+  string name = 3;
+  string architecture_family = 4;
+  string weights_sha256 = 5;
+  string dataset_lineage_ref = 6;
+  double out_of_sample_sharpe = 7;
+  double max_drawdown_pct = 8;
+  string execution_mode = 9;
+  string verification_status = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message ComputeCluster {
+  string id = 1;
+  string slug = 2;
+  string name = 3;
+  string accelerator_type = 4;
+  string enclave_attestation = 5;
+  string region = 6;
+  double hourly_budget_usd = 7;
+  bool zero_egress_enforced = 8;
+  bool active_job = 9;
+  google.protobuf.Timestamp last_dispatched_at = 10;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool include_zkml_receipt = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetFractalStatsRequest {}
+
+message GetFractalStatsResponse {
+  FractalStats stats = 1;
+}
+
+message ListQuantModelsRequest {
+  int32 limit = 1;
+}
+
+message ListQuantModelsResponse {
+  repeated QuantModel models = 1;
+}
+
+message RegisterQuantModelRequest {
+  string name = 1;
+  string architecture_family = 2;
+  string weights_sha256 = 3;
+  string dataset_lineage_ref = 4;
+  double out_of_sample_sharpe = 5;
+  double max_drawdown_pct = 6;
+  string execution_mode = 7;
+}
+
+message RegisterQuantModelResponse {
+  QuantModel model = 1;
+  double updated_fractal_score = 2;
+}
+
+message ListComputeClustersRequest {
+  string accelerator_type = 1;
+}
+
+message ListComputeClustersResponse {
+  repeated ComputeCluster clusters = 1;
+}
+
+message DispatchComputeJobRequest {
+  string cluster_id = 1;
+  string deterministic_seed_digest = 2;
+}
+
+message DispatchComputeJobResponse {
+  ComputeCluster cluster = 1;
+  double updated_fractal_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool include_zkml_receipt = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetFractalChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetFractalChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveFractalChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveFractalChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_fractal_score = 2;
+}
+
+message AdjudicateFractalChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateFractalChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}

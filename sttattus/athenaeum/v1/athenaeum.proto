@@ -1,0 +1,207 @@
+syntax = "proto3";
+
+package sttattus.athenaeum.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/athenaeum/v1;athenaeumv1";
+
+// AthenaeumService powers Pillar 16: Athenaeum (Scientific Patronage, Research Fellowships & IP Translation).
+service AthenaeumService {
+  rpc GetAthenaeumStats(GetAthenaeumStatsRequest) returns (GetAthenaeumStatsResponse);
+  rpc ListResearchGrants(ListResearchGrantsRequest) returns (ListResearchGrantsResponse);
+  rpc CreateResearchGrant(CreateResearchGrantRequest) returns (CreateResearchGrantResponse);
+  rpc ListSymposiaAndLabs(ListSymposiaAndLabsRequest) returns (ListSymposiaAndLabsResponse);
+  rpc EnrollSymposiumOrLab(EnrollSymposiumOrLabRequest) returns (EnrollSymposiumOrLabResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices ATH1-ATH12 Workbench & Mutation RPCs
+  rpc GetAthenaeumChoiceWorkbench(GetAthenaeumChoiceWorkbenchRequest) returns (GetAthenaeumChoiceWorkbenchResponse);
+  rpc SaveAthenaeumChoiceRecord(SaveAthenaeumChoiceRecordRequest) returns (SaveAthenaeumChoiceRecordResponse);
+  rpc AdjudicateAthenaeumChoiceGovernance(AdjudicateAthenaeumChoiceGovernanceRequest) returns (AdjudicateAthenaeumChoiceGovernanceResponse);
+}
+
+message AthenaeumStats {
+  string user_id = 1;
+  double athenaeum_score = 2;
+  string standing_tier = 3;
+  int32 active_grants_count = 4;
+  int32 verified_publications_count = 5;
+  int32 replicated_datasets_count = 6;
+  double total_research_patronage_usd = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message ResearchGrant {
+  string id = 1;
+  string user_id = 2;
+  string title = 3;
+  string principal_investigator = 4;
+  string orcid_id = 5;
+  string institution = 6;
+  string discipline = 7;
+  double funding_usd = 8;
+  string doi_or_preprint_ref = 9;
+  string reproducibility_status = 10;
+  string ethics_irb_status = 11;
+  google.protobuf.Timestamp created_at = 12;
+}
+
+message SymposiumOrLab {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string host_institution = 4;
+  string discipline = 5;
+  string format = 6;
+  bool open_access_mandate = 7;
+  bool enrolled = 8;
+  google.protobuf.Timestamp convenes_at = 9;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool include_patronage_band = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetAthenaeumStatsRequest {}
+
+message GetAthenaeumStatsResponse {
+  AthenaeumStats stats = 1;
+}
+
+message ListResearchGrantsRequest {
+  int32 limit = 1;
+}
+
+message ListResearchGrantsResponse {
+  repeated ResearchGrant grants = 1;
+}
+
+message CreateResearchGrantRequest {
+  string title = 1;
+  string principal_investigator = 2;
+  string orcid_id = 3;
+  string institution = 4;
+  string discipline = 5;
+  double funding_usd = 6;
+  string doi_or_preprint_ref = 7;
+  string ethics_irb_status = 8;
+}
+
+message CreateResearchGrantResponse {
+  ResearchGrant grant = 1;
+  double updated_athenaeum_score = 2;
+}
+
+message ListSymposiaAndLabsRequest {
+  string discipline = 1;
+}
+
+message ListSymposiaAndLabsResponse {
+  repeated SymposiumOrLab items = 1;
+}
+
+message EnrollSymposiumOrLabRequest {
+  string item_id = 1;
+  string research_abstract = 2;
+}
+
+message EnrollSymposiumOrLabResponse {
+  SymposiumOrLab item = 1;
+  double updated_athenaeum_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool include_patronage_band = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetAthenaeumChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetAthenaeumChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveAthenaeumChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveAthenaeumChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_athenaeum_score = 2;
+}
+
+message AdjudicateAthenaeumChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateAthenaeumChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}

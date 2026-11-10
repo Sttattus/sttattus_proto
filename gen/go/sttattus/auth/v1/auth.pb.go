@@ -40,6 +40,14 @@ const (
 	AppCode_APP_CODE_ORACLE      AppCode = 10
 	AppCode_APP_CODE_LEGACY      AppCode = 11
 	AppCode_APP_CODE_ZENITH      AppCode = 12
+	AppCode_APP_CODE_MUSE        AppCode = 13
+	AppCode_APP_CODE_SENATE      AppCode = 14
+	AppCode_APP_CODE_AEGIS       AppCode = 15
+	AppCode_APP_CODE_ATHENAEUM   AppCode = 16
+	AppCode_APP_CODE_SYNDICATE   AppCode = 17
+	AppCode_APP_CODE_CELLAR      AppCode = 18
+	AppCode_APP_CODE_EMBASSY     AppCode = 19
+	AppCode_APP_CODE_FRACTAL     AppCode = 20
 )
 
 // Enum value maps for AppCode.
@@ -58,6 +66,14 @@ var (
 		10: "APP_CODE_ORACLE",
 		11: "APP_CODE_LEGACY",
 		12: "APP_CODE_ZENITH",
+		13: "APP_CODE_MUSE",
+		14: "APP_CODE_SENATE",
+		15: "APP_CODE_AEGIS",
+		16: "APP_CODE_ATHENAEUM",
+		17: "APP_CODE_SYNDICATE",
+		18: "APP_CODE_CELLAR",
+		19: "APP_CODE_EMBASSY",
+		20: "APP_CODE_FRACTAL",
 	}
 	AppCode_value = map[string]int32{
 		"APP_CODE_UNSPECIFIED": 0,
@@ -73,6 +89,14 @@ var (
 		"APP_CODE_ORACLE":      10,
 		"APP_CODE_LEGACY":      11,
 		"APP_CODE_ZENITH":      12,
+		"APP_CODE_MUSE":        13,
+		"APP_CODE_SENATE":      14,
+		"APP_CODE_AEGIS":       15,
+		"APP_CODE_ATHENAEUM":   16,
+		"APP_CODE_SYNDICATE":   17,
+		"APP_CODE_CELLAR":      18,
+		"APP_CODE_EMBASSY":     19,
+		"APP_CODE_FRACTAL":     20,
 	}
 )
 
@@ -1859,7 +1883,7 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x123\n" +
 	"\x06tokens\x18\x02 \x01(\v2\x1b.sttattus.auth.v1.TokenPairR\x06tokens\x127\n" +
 	"\aprofile\x18\x03 \x01(\v2\x1d.sttattus.auth.v1.ProfileHintR\aprofile\"\x10\n" +
-	"\x0eLogoutResponse*\x9a\x02\n" +
+	"\x0eLogoutResponse*\xc7\x03\n" +
 	"\aAppCode\x12\x18\n" +
 	"\x14APP_CODE_UNSPECIFIED\x10\x00\x12\x12\n" +
 	"\x0eAPP_CODE_FORGE\x10\x01\x12\x14\n" +
@@ -1874,7 +1898,15 @@ const file_sttattus_auth_v1_auth_proto_rawDesc = "" +
 	"\x0fAPP_CODE_ORACLE\x10\n" +
 	"\x12\x13\n" +
 	"\x0fAPP_CODE_LEGACY\x10\v\x12\x13\n" +
-	"\x0fAPP_CODE_ZENITH\x10\f*}\n" +
+	"\x0fAPP_CODE_ZENITH\x10\f\x12\x11\n" +
+	"\rAPP_CODE_MUSE\x10\r\x12\x13\n" +
+	"\x0fAPP_CODE_SENATE\x10\x0e\x12\x12\n" +
+	"\x0eAPP_CODE_AEGIS\x10\x0f\x12\x16\n" +
+	"\x12APP_CODE_ATHENAEUM\x10\x10\x12\x16\n" +
+	"\x12APP_CODE_SYNDICATE\x10\x11\x12\x13\n" +
+	"\x0fAPP_CODE_CELLAR\x10\x12\x12\x14\n" +
+	"\x10APP_CODE_EMBASSY\x10\x13\x12\x14\n" +
+	"\x10APP_CODE_FRACTAL\x10\x14*}\n" +
 	"\fAuthProvider\x12\x1d\n" +
 	"\x19AUTH_PROVIDER_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14AUTH_PROVIDER_GOOGLE\x10\x01\x12\x1a\n" +

@@ -1,0 +1,208 @@
+syntax = "proto3";
+
+package sttattus.senate.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/senate/v1;senatev1";
+
+// SenateService powers Pillar 14: Senate (Civic Governance, Philanthropic Foundations & Policy Fellowships).
+service SenateService {
+  rpc GetSenateStats(GetSenateStatsRequest) returns (GetSenateStatsResponse);
+  rpc ListGrantDockets(ListGrantDocketsRequest) returns (ListGrantDocketsResponse);
+  rpc CreateGrantDocket(CreateGrantDocketRequest) returns (CreateGrantDocketResponse);
+  rpc ListCivicBoardsAndFellowships(ListCivicBoardsAndFellowshipsRequest) returns (ListCivicBoardsAndFellowshipsResponse);
+  rpc EnrollCivicBoardOrFellowship(EnrollCivicBoardOrFellowshipRequest) returns (EnrollCivicBoardOrFellowshipResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices SN1-SN12 Workbench & Mutation RPCs
+  rpc GetSenateChoiceWorkbench(GetSenateChoiceWorkbenchRequest) returns (GetSenateChoiceWorkbenchResponse);
+  rpc SaveSenateChoiceRecord(SaveSenateChoiceRecordRequest) returns (SaveSenateChoiceRecordResponse);
+  rpc AdjudicateSenateChoiceGovernance(AdjudicateSenateChoiceGovernanceRequest) returns (AdjudicateSenateChoiceGovernanceResponse);
+}
+
+message SenateStats {
+  string user_id = 1;
+  double senate_score = 2;
+  string standing_tier = 3;
+  int32 total_dockets_count = 4;
+  int32 verified_grantees_count = 5;
+  int32 active_board_seats = 6;
+  double total_disbursed_usd = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message GrantDocket {
+  string id = 1;
+  string user_id = 2;
+  string title = 3;
+  string grantee_organization = 4;
+  string ein_or_registry_id = 5;
+  string program_area = 6;
+  string vehicle_type = 7;
+  double commitment_usd = 8;
+  string diligence_status = 9;
+  string irs_990_verification_ref = 10;
+  string impact_kpi_summary = 11;
+  google.protobuf.Timestamp created_at = 12;
+}
+
+message CivicBoardOrFellowship {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string institution = 4;
+  string city = 5;
+  string category = 6;
+  string governance_role = 7;
+  bool d_and_o_verified = 8;
+  bool enrolled = 9;
+  google.protobuf.Timestamp next_session_at = 10;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool include_disbursement_tier = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetSenateStatsRequest {}
+
+message GetSenateStatsResponse {
+  SenateStats stats = 1;
+}
+
+message ListGrantDocketsRequest {
+  int32 limit = 1;
+}
+
+message ListGrantDocketsResponse {
+  repeated GrantDocket dockets = 1;
+}
+
+message CreateGrantDocketRequest {
+  string title = 1;
+  string grantee_organization = 2;
+  string ein_or_registry_id = 3;
+  string program_area = 4;
+  string vehicle_type = 5;
+  double commitment_usd = 6;
+  string irs_990_verification_ref = 7;
+  string impact_kpi_summary = 8;
+}
+
+message CreateGrantDocketResponse {
+  GrantDocket docket = 1;
+  double updated_senate_score = 2;
+}
+
+message ListCivicBoardsAndFellowshipsRequest {
+  string category = 1;
+}
+
+message ListCivicBoardsAndFellowshipsResponse {
+  repeated CivicBoardOrFellowship items = 1;
+}
+
+message EnrollCivicBoardOrFellowshipRequest {
+  string item_id = 1;
+  string conflict_disclosure = 2;
+}
+
+message EnrollCivicBoardOrFellowshipResponse {
+  CivicBoardOrFellowship item = 1;
+  double updated_senate_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool include_disbursement_tier = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetSenateChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetSenateChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveSenateChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveSenateChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_senate_score = 2;
+}
+
+message AdjudicateSenateChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateSenateChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}

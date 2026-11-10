@@ -1,0 +1,205 @@
+syntax = "proto3";
+
+package sttattus.aegis.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/aegis/v1;aegisv1";
+
+// AegisService powers Pillar 15: Aegis (Personal Security, Cyber Hygiene & Crisis Readiness).
+service AegisService {
+  rpc GetAegisStats(GetAegisStatsRequest) returns (GetAegisStatsResponse);
+  rpc ListSecurityPostures(ListSecurityPosturesRequest) returns (ListSecurityPosturesResponse);
+  rpc RecordSecurityPosture(RecordSecurityPostureRequest) returns (RecordSecurityPostureResponse);
+  rpc ListReadinessDrills(ListReadinessDrillsRequest) returns (ListReadinessDrillsResponse);
+  rpc CompleteReadinessDrill(CompleteReadinessDrillRequest) returns (CompleteReadinessDrillResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices AG1-AG12 Workbench & Mutation RPCs
+  rpc GetAegisChoiceWorkbench(GetAegisChoiceWorkbenchRequest) returns (GetAegisChoiceWorkbenchResponse);
+  rpc SaveAegisChoiceRecord(SaveAegisChoiceRecordRequest) returns (SaveAegisChoiceRecordResponse);
+  rpc AdjudicateAegisChoiceGovernance(AdjudicateAegisChoiceGovernanceRequest) returns (AdjudicateAegisChoiceGovernanceResponse);
+}
+
+message AegisStats {
+  string user_id = 1;
+  double aegis_score = 2;
+  string standing_tier = 3;
+  int32 hardened_domains_count = 4;
+  int32 verified_drills_count = 5;
+  int32 active_travel_corridors = 6;
+  double readiness_index_pct = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message SecurityPosture {
+  string id = 1;
+  string user_id = 2;
+  string domain = 3;
+  string control_title = 4;
+  string risk_tier = 5;
+  string status = 6;
+  double score_pct = 7;
+  string verification_method = 8;
+  string attestation_ref = 9;
+  string remediation_notes = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+message ReadinessDrill {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string scenario_type = 4;
+  string target_pillar_bridge = 5;
+  int32 duration_minutes = 6;
+  string difficulty = 7;
+  bool completed = 8;
+  google.protobuf.Timestamp last_completed_at = 9;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool include_readiness_tier = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetAegisStatsRequest {}
+
+message GetAegisStatsResponse {
+  AegisStats stats = 1;
+}
+
+message ListSecurityPosturesRequest {
+  int32 limit = 1;
+}
+
+message ListSecurityPosturesResponse {
+  repeated SecurityPosture postures = 1;
+}
+
+message RecordSecurityPostureRequest {
+  string domain = 1;
+  string control_title = 2;
+  string risk_tier = 3;
+  double score_pct = 4;
+  string verification_method = 5;
+  string attestation_ref = 6;
+  string remediation_notes = 7;
+}
+
+message RecordSecurityPostureResponse {
+  SecurityPosture posture = 1;
+  double updated_aegis_score = 2;
+}
+
+message ListReadinessDrillsRequest {
+  string scenario_type = 1;
+}
+
+message ListReadinessDrillsResponse {
+  repeated ReadinessDrill drills = 1;
+}
+
+message CompleteReadinessDrillRequest {
+  string drill_id = 1;
+  string after_action_summary = 2;
+}
+
+message CompleteReadinessDrillResponse {
+  ReadinessDrill drill = 1;
+  double updated_aegis_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool include_readiness_tier = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetAegisChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetAegisChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveAegisChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveAegisChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_aegis_score = 2;
+}
+
+message AdjudicateAegisChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateAegisChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}

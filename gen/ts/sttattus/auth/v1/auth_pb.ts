@@ -78,6 +78,46 @@ export enum AppCode {
    * @generated from enum value: APP_CODE_ZENITH = 12;
    */
   ZENITH = 12,
+
+  /**
+   * @generated from enum value: APP_CODE_MUSE = 13;
+   */
+  MUSE = 13,
+
+  /**
+   * @generated from enum value: APP_CODE_SENATE = 14;
+   */
+  SENATE = 14,
+
+  /**
+   * @generated from enum value: APP_CODE_AEGIS = 15;
+   */
+  AEGIS = 15,
+
+  /**
+   * @generated from enum value: APP_CODE_ATHENAEUM = 16;
+   */
+  ATHENAEUM = 16,
+
+  /**
+   * @generated from enum value: APP_CODE_SYNDICATE = 17;
+   */
+  SYNDICATE = 17,
+
+  /**
+   * @generated from enum value: APP_CODE_CELLAR = 18;
+   */
+  CELLAR = 18,
+
+  /**
+   * @generated from enum value: APP_CODE_EMBASSY = 19;
+   */
+  EMBASSY = 19,
+
+  /**
+   * @generated from enum value: APP_CODE_FRACTAL = 20;
+   */
+  FRACTAL = 20,
 }
 // Retrieve enum metadata with: proto3.getEnumType(AppCode)
 proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
@@ -94,6 +134,14 @@ proto3.util.setEnumType(AppCode, "sttattus.auth.v1.AppCode", [
   { no: 10, name: "APP_CODE_ORACLE" },
   { no: 11, name: "APP_CODE_LEGACY" },
   { no: 12, name: "APP_CODE_ZENITH" },
+  { no: 13, name: "APP_CODE_MUSE" },
+  { no: 14, name: "APP_CODE_SENATE" },
+  { no: 15, name: "APP_CODE_AEGIS" },
+  { no: 16, name: "APP_CODE_ATHENAEUM" },
+  { no: 17, name: "APP_CODE_SYNDICATE" },
+  { no: 18, name: "APP_CODE_CELLAR" },
+  { no: 19, name: "APP_CODE_EMBASSY" },
+  { no: 20, name: "APP_CODE_FRACTAL" },
 ]);
 
 /**

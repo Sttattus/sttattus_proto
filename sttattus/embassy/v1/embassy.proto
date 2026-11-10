@@ -1,0 +1,205 @@
+syntax = "proto3";
+
+package sttattus.embassy.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Sttattus/backend_go/gen/proto/sttattus/embassy/v1;embassyv1";
+
+// EmbassyService powers Pillar 19: Embassy (Global Citizenship, Tax Presence Ledgers & Treaty Mobility).
+service EmbassyService {
+  rpc GetEmbassyStats(GetEmbassyStatsRequest) returns (GetEmbassyStatsResponse);
+  rpc ListJurisdictionDossiers(ListJurisdictionDossiersRequest) returns (ListJurisdictionDossiersResponse);
+  rpc UpsertJurisdictionDossier(UpsertJurisdictionDossierRequest) returns (UpsertJurisdictionDossierResponse);
+  rpc ListTreatyAndConsularPrograms(ListTreatyAndConsularProgramsRequest) returns (ListTreatyAndConsularProgramsResponse);
+  rpc ActivateTreatyOrConsularProgram(ActivateTreatyOrConsularProgramRequest) returns (ActivateTreatyOrConsularProgramResponse);
+  rpc CreateProfileShare(CreateProfileShareRequest) returns (CreateProfileShareResponse);
+  rpc ListMyProfileShares(ListMyProfileSharesRequest) returns (ListMyProfileSharesResponse);
+  rpc RevokeProfileShare(RevokeProfileShareRequest) returns (RevokeProfileShareResponse);
+
+  // Choices EMB1-EMB12 Workbench & Mutation RPCs
+  rpc GetEmbassyChoiceWorkbench(GetEmbassyChoiceWorkbenchRequest) returns (GetEmbassyChoiceWorkbenchResponse);
+  rpc SaveEmbassyChoiceRecord(SaveEmbassyChoiceRecordRequest) returns (SaveEmbassyChoiceRecordResponse);
+  rpc AdjudicateEmbassyChoiceGovernance(AdjudicateEmbassyChoiceGovernanceRequest) returns (AdjudicateEmbassyChoiceGovernanceResponse);
+}
+
+message EmbassyStats {
+  string user_id = 1;
+  double embassy_score = 2;
+  string standing_tier = 3;
+  int32 active_jurisdictions_count = 4;
+  int32 verified_presence_days_ytd = 5;
+  int32 active_treaties_and_carnets = 6;
+  double compliance_readiness_pct = 7;
+  google.protobuf.Timestamp updated_at = 8;
+}
+
+message JurisdictionDossier {
+  string id = 1;
+  string user_id = 2;
+  string country_code = 3;
+  string country_name = 4;
+  string status_type = 5;
+  int32 days_present_ytd = 6;
+  int32 statutory_day_ceiling = 7;
+  string tax_treaty_tie_breaker = 8;
+  string document_expiry_date = 9;
+  string verification_status = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+message TreatyOrConsularProgram {
+  string id = 1;
+  string slug = 2;
+  string title = 3;
+  string jurisdiction = 4;
+  string category = 5;
+  string statutory_citation = 6;
+  bool requires_counsel_signoff = 7;
+  bool activated = 8;
+  google.protobuf.Timestamp review_by = 9;
+}
+
+message ProfileShare {
+  string id = 1;
+  string token = 2;
+  string share_url = 3;
+  string label = 4;
+  bool selective_zk_disclosure = 5;
+  bool revoked = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+message ChoiceRecord {
+  string id = 1;
+  int32 choice_number = 2;
+  string table_tier = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  string verification_state = 7;
+  double metric_value = 8;
+  string metric_unit = 9;
+  string citation_or_hash = 10;
+  string notes = 11;
+  google.protobuf.Timestamp updated_at = 12;
+}
+
+message GetEmbassyStatsRequest {}
+
+message GetEmbassyStatsResponse {
+  EmbassyStats stats = 1;
+}
+
+message ListJurisdictionDossiersRequest {
+  int32 limit = 1;
+}
+
+message ListJurisdictionDossiersResponse {
+  repeated JurisdictionDossier dossiers = 1;
+}
+
+message UpsertJurisdictionDossierRequest {
+  string country_code = 1;
+  string country_name = 2;
+  string status_type = 3;
+  int32 days_present_ytd = 4;
+  int32 statutory_day_ceiling = 5;
+  string tax_treaty_tie_breaker = 6;
+  string document_expiry_date = 7;
+}
+
+message UpsertJurisdictionDossierResponse {
+  JurisdictionDossier dossier = 1;
+  double updated_embassy_score = 2;
+}
+
+message ListTreatyAndConsularProgramsRequest {
+  string category = 1;
+}
+
+message ListTreatyAndConsularProgramsResponse {
+  repeated TreatyOrConsularProgram programs = 1;
+}
+
+message ActivateTreatyOrConsularProgramRequest {
+  string program_id = 1;
+  string counsel_reference = 2;
+}
+
+message ActivateTreatyOrConsularProgramResponse {
+  TreatyOrConsularProgram program = 1;
+  double updated_embassy_score = 2;
+}
+
+message CreateProfileShareRequest {
+  string label = 1;
+  bool selective_zk_disclosure = 2;
+  int32 expires_in_days = 3;
+}
+
+message CreateProfileShareResponse {
+  ProfileShare share = 1;
+}
+
+message ListMyProfileSharesRequest {}
+
+message ListMyProfileSharesResponse {
+  repeated ProfileShare shares = 1;
+}
+
+message RevokeProfileShareRequest {
+  string share_id = 1;
+}
+
+message RevokeProfileShareResponse {
+  bool revoked = 1;
+}
+
+message GetEmbassyChoiceWorkbenchRequest {
+  int32 choice_number = 1;
+}
+
+message GetEmbassyChoiceWorkbenchResponse {
+  int32 choice_number = 1;
+  string choice_code = 2;
+  string choice_title = 3;
+  string choice_summary = 4;
+  string primary_table_name = 5;
+  string secondary_table_name = 6;
+  string governance_table_name = 7;
+  repeated ChoiceRecord primary_records = 8;
+  repeated ChoiceRecord secondary_records = 9;
+  repeated ChoiceRecord governance_records = 10;
+}
+
+message SaveEmbassyChoiceRecordRequest {
+  int32 choice_number = 1;
+  string table_tier = 2;
+  string record_id = 3;
+  string title = 4;
+  string subtitle = 5;
+  string status = 6;
+  double metric_value = 7;
+  string metric_unit = 8;
+  string citation_or_hash = 9;
+  string notes = 10;
+}
+
+message SaveEmbassyChoiceRecordResponse {
+  ChoiceRecord record = 1;
+  double updated_embassy_score = 2;
+}
+
+message AdjudicateEmbassyChoiceGovernanceRequest {
+  int32 choice_number = 1;
+  string record_id = 2;
+  string decision = 3;
+  string rationale = 4;
+  string citation_or_hash = 5;
+}
+
+message AdjudicateEmbassyChoiceGovernanceResponse {
+  ChoiceRecord governance_record = 1;
+}
